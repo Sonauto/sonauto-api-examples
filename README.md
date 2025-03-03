@@ -9,8 +9,6 @@
 
 This repository contains example code for the [Sonauto AI Music Generation API](https://sonauto.ai), showcasing how to generate music, create transitions, and even produce singing telegram videos with simple Python scripts.
 
-![Sonauto Music Banner](https://placekitten.com/1200/300)
-
 ## 📋 Table of Contents
 
 - [Installation](#installation)
