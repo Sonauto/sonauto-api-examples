@@ -5,6 +5,24 @@ import argparse
 import sys
 from dotenv import load_dotenv
 
+"""
+Singing Telegram Video Creator
+
+[`singing_telegram.py`](singing_telegram.py) - Create a personalized singing telegram video that combines Sonauto's music generation with Lemon Slice's AI video generation.
+
+This example:
+- Generates custom lyrics about the recipient based on your input
+- Creates a personalized song in the style of your choice
+- Uses Lemon Slice API to generate a video of a character singing your custom song
+- Combines everything into a ready-to-share singing telegram video
+
+Don't forget to grab a [Lemon Slice API key](https://lemonslice.com/developer) and set your .env file.
+
+```bash
+python singing_telegram.py --recipient "Sarah" --occasion "birthday" --message "she is turning 30 and loves hiking" --style "pop"
+```
+"""
+
 # Load environment variables from .env file
 load_dotenv()
 
@@ -19,8 +37,6 @@ LEMON_SLICE_BASE_URL = "https://lemonslice.com/api/v2"
 # Character image URLs for different occasions (example)
 CHARACTER_IMAGES = {
     "birthday": "https://6ammc3n5zzf5ljnz.public.blob.vercel-storage.com/actor_previews/actor_preview_sophia-eBMR0dI7joEpZ542diXv7kib5AEJwz",
-    "anniversary": "https://6ammc3n5zzf5ljnz.public.blob.vercel-storage.com/actor_previews/actor_preview_james-Fex3jIwXdQ4XnPmkDi8v7xPb1AZJwb",
-    "graduation": "https://6ammc3n5zzf5ljnz.public.blob.vercel-storage.com/actor_previews/actor_preview_alex-2Bn2xIwOdL5PoCgQdJ9g7lPa2JZKyL",
     "default": "https://6ammc3n5zzf5ljnz.public.blob.vercel-storage.com/actor_previews/actor_preview_sophia-eBMR0dI7joEpZ542diXv7kib5AEJwz"
 }
 

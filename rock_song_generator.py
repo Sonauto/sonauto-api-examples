@@ -4,6 +4,20 @@ import os
 from dotenv import load_dotenv
 import sys
 
+"""
+Basic Song Generation
+
+[`rock_song_generator.py`](rock_song_generator.py) - Generate a complete rock song with just a few lines of code.
+
+First, sub in your Sonauto API key.
+
+Second, run it with:
+
+```bash
+python rock_song_generator.py
+```
+"""
+
 # Load environment variables from .env file
 load_dotenv()
 

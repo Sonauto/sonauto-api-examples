@@ -1,0 +1,2 @@
+pydub==0.25.1 ; python_version >= "3.11" and python_version < "4.0"
+yt-dlp==2025.2.19 ; python_version >= "3.11" and python_version < "4.0"

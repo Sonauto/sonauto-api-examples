@@ -33,6 +33,8 @@ cd api-examples
 pip install -r requirements.txt
 ```
 
+Alternatively, install the dependencies with poetry or uv.
+
 ## 🔑 API Keys
 
 To use these examples, you'll need:
@@ -45,7 +47,7 @@ To use these examples, you'll need:
 
 ### 1. Basic Song Generation
 
-[`rock_song_generator.py`](examples/rock_song_generator.py) - Generate a complete rock song with just a few lines of code.
+[`rock_song_generator.py`](rock_song_generator.py) - Generate a complete rock song with just a few lines of code.
 
 First, sub in your Sonauto API key.
 
@@ -57,22 +59,34 @@ python rock_song_generator.py
 
 ### 2. Song Transition Generator
 
-[`transition_generator.py`](examples/transition_generator.py) - Create smooth transitions between any two songs downloaded from YouTube.
+[`transition_generator.py`](transition_generator.py) - Create smooth transitions between any two songs downloaded from YouTube.
 
 This script:
-- Downloads two songs from YouTube URLs
+- Downloads two songs from YouTube video IDs
 - Generates a transition between them using Sonauto's API
 - Exports a combined track with the transition
 
 Don't forget to sub in your API key.
 
+Example: Smash Mouth to Rick Astley
 ```bash
-python examples/transition_generator.py --song1 "https://youtube.com/watch?v=dQw4w9WgXcQ" --song2 "https://youtube.com/watch?v=y6120QOlsfU" --transition-length 15
+python song_transition.py ec1LhrCmzwI dQw4w9WgXcQ --trim-to-start 13 --trim-from-end 0.5 --silence 20
 ```
+
+#### Parameters
+
+- **URL1/URL2**: YouTube URLs or video IDs (required)
+- **--song-duration**: Duration in seconds to use from each song (default: 45)
+- **--silence**: Duration of silence between songs in seconds (default: 5)
+- **--trim-from-end**: Seconds to trim from the end of the first song (default: 0)
+- **--trim-to-start**: Seconds to trim from the beginning of the second song (default: 0)
+- **--output**: Custom filename for the final transition (default: transition_[TASK_ID].ogg)
+- **--pre-inpaint-output**: Filename for the pre-inpainting version (default: pre_inpaint_[TIMESTAMP].mp3)
+
 
 ### 3. Singing Telegram Video Creator
 
-[`singing_telegram.py`](examples/singing_telegram.py) - Create a personalized singing telegram video that combines Sonauto's music generation with Lemon Slice's AI video generation.
+[`singing_telegram.py`](singing_telegram.py) - Create a personalized singing telegram video that combines Sonauto's music generation with Lemon Slice's AI video generation.
 
 This example:
 - Generates custom lyrics about the recipient based on your input
